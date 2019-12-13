@@ -23,3 +23,7 @@
 #### Install Chromedriver on Mac via Homebrew
 
 ```brew cask install chromedriver```
+
+#### Setup RSpec
+
+```rspec --init```
