@@ -8,4 +8,5 @@ gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
 # RSpec testing framework
 gem 'rspec', '~> 3.9'
 # Code style checking for RSpec files (linter)
+gem 'rubocop-performance', '~> 1.5', '>= 1.5.1'
 gem 'rubocop-rspec', '~> 1.37'
