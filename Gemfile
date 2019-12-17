@@ -2,11 +2,13 @@ source 'https://rubygems.org'
 
 ruby '2.6.5'
 
-# Adds support for Capybara system testing and selenium driver
+# https://github.com/teamcapybara/capybara
 gem 'capybara', '~> 3.29'
+# https://github.com/SeleniumHQ/selenium/tree/master/rb
 gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
-# RSpec testing framework
+# https://github.com/rspec/rspec
 gem 'rspec', '~> 3.9'
-# Code style checking for RSpec files (linter)
+# https://github.com/rubocop-hq/rubocop-performance
 gem 'rubocop-performance', '~> 1.5', '>= 1.5.1'
+# https://github.com/rubocop-hq/rubocop-rspec
 gem 'rubocop-rspec', '~> 1.37'
