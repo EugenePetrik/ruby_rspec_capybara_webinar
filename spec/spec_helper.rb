@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Load all files with methods from the support directory
 Dir.glob(File.expand_path('support/**/*.rb', __dir__), &method(:require))
 

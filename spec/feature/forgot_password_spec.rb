@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Forgot Password page', type: :feature do
   before { visit '/forgot_password' }
 

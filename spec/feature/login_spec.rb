@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.feature 'Login page', type: :feature do
   before { visit '/login' }
 
@@ -21,7 +23,7 @@ RSpec.feature 'Login page', type: :feature do
     fill_in('Username', with: 'tomsmith')
     fill_in('Password', with: 'SuperSecretPassword!')
     click_button('Login')
-    
+
     success_message = 'You logged into a secure area!'
     expect(page).to have_current_path('/secure')
     expect(page).to have_content(success_message)

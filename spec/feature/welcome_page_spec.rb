@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'The-Internet page', type: :feature do
   before { visit '/' }
 
