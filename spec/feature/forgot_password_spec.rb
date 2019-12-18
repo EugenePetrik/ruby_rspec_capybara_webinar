@@ -19,7 +19,7 @@ RSpec.describe 'Forgot Password page', type: :feature do
 
   it 'should send restore password email' do
     user_email = FFaker::Internet.email
-    p "User email is #{user_email}"
+    # puts "User email is #{user_email}"
 
     within('form#forgot_password') do
       fill_in('E-mail', with: user_email)
