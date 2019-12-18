@@ -68,7 +68,7 @@ else
 end
 
 Capybara.app_host = 'https://the-internet.herokuapp.com'
-Capybara.default_max_wait_time = 10
+Capybara.default_max_wait_time = 5
 
 RSpec.configure do |config|
   config.append_before(:each, type: :feature) do
