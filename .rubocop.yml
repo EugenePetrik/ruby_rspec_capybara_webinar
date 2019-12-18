@@ -15,3 +15,6 @@ RSpec/MultipleExpectations:
 
 RSpec/MessageChain:
   Enabled: true
+
+Metrics/BlockLength:
+  Max: 100

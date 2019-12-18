@@ -32,7 +32,7 @@ RSpec.describe 'The-Internet page', type: :feature do
     expect(page).to have_current_path('/login')
   end
 
-  it 'click on the Dropdown link with click_on' do
+  it 'clicks on the Dropdown link with click_on' do
     # This method allows clicking on a Link or Button
     click_on('Dropdown')
     expect(page).to have_current_path('/dropdown')
