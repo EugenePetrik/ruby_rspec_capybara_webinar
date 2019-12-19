@@ -1,0 +1,30 @@
+# frozen_string_literal: true
+
+RSpec.describe 'Checkboxes page', type: :feature do
+  before { visit '/checkboxes' }
+
+  it 'title should be visible' do
+    expect(page).to have_css('h3', text: 'Checkboxes')
+  end
+
+  it 'shows 2 checkboxes' do
+    expect(all(:css, 'input[type="checkbox"]').size).to eq 2
+  end
+
+  it 'checks that checkbox 1 is selected' do
+    expect(find(:xpath, '//input[@type="checkbox"][1]')).not_to be_checked
+  end
+
+  it 'checks that checkbox 2 is selected' do
+    expect(find(:xpath, '//input[@type="checkbox"][2]')).to be_checked
+  end
+
+  # Select checkbox by id, name or label text
+  # check('checkbox_selector')
+
+  # Deselect checkbox by id, name or label text
+  # uncheck('checkbox_selector')
+
+  # Choose radio button by id, name or label text
+  # choose('yes')
+end
