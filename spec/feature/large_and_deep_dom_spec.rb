@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Large & Deep DOM page' do
+RSpec.describe 'Large & Deep DOM page', type: :feature do
   before { visit '/large' }
 
   it 'checks page title' do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Hovers page' do
+RSpec.describe 'Hovers page', type: :feature do
   before { visit '/hovers' }
 
   it 'checks page title' do

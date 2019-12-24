@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Key Presses page' do
+RSpec.describe 'Key Presses page', type: :feature do
   # Capybara Doc - https://www.rubydoc.info/github/jnicklas/capybara/Capybara%2FNode%2FElement%3Asend_keys
 
   before { visit '/key_presses' }

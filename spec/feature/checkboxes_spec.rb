@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Checkboxes page' do
+RSpec.describe 'Checkboxes page', type: :feature do
   before { visit '/checkboxes' }
 
   it 'checks page title' do

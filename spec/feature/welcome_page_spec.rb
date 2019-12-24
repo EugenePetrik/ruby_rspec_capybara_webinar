@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'The-Internet page' do
+RSpec.describe 'The-Internet page', type: :feature do
   before { visit '/' }
 
   it 'checks page title with have_title' do

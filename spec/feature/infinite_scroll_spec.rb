@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Infinite Scroll page' do
+RSpec.describe 'Infinite Scroll page', type: :feature do
   before { visit '/infinite_scroll' }
 
   it 'checks page title' do
@@ -9,7 +9,7 @@ RSpec.describe 'Infinite Scroll page' do
 
   it 'scrolls to bottom five times' do
     script = 'window.scrollTo(0, document.body.scrollHeight)'
-    
+
     5.times { execute_script(script) }
   end
 end

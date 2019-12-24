@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Dropdown page' do
+RSpec.describe 'Dropdown page', type: :feature do
   before { visit '/dropdown' }
 
   it 'checks page title' do

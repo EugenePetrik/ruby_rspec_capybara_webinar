@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Forgot Password page' do
+RSpec.describe 'Forgot Password page', type: :feature do
   before { visit '/forgot_password' }
 
   it 'checks page title' do
@@ -17,7 +17,7 @@ RSpec.feature 'Forgot Password page' do
     end
   end
 
-  it 'should send restore password email' do
+  it 'sends restore password email' do
     user_email = FFaker::Internet.email
     # puts "User email is #{user_email}"
 

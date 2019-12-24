@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature 'File Upload page' do
+RSpec.describe 'File Upload page', type: :feature do
   before { visit '/upload' }
 
   it 'checks page title' do
