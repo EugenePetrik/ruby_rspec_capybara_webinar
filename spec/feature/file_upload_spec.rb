@@ -14,6 +14,6 @@ RSpec.feature 'File Upload page' do
     click_on 'Upload'
 
     expect(page).to have_css('h3', text: 'File Uploaded!')
-    expect(page).to have_css('#uploaded-files', text: "#{File.basename(path)}")
+    expect(page).to have_css('#uploaded-files', text: File.basename(path).to_s)
   end
 end

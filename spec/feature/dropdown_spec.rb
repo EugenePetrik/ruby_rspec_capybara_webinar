@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Dropdown page', type: :feature do
+RSpec.feature 'Dropdown page' do
   before { visit '/dropdown' }
 
-  it 'title should be visible' do
+  it 'checks page title' do
     expect(page).to have_css('h3', text: 'Dropdown List')
   end
 

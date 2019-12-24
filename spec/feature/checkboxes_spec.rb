@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Checkboxes page', type: :feature do
+RSpec.feature 'Checkboxes page' do
   before { visit '/checkboxes' }
 
-  it 'title should be visible' do
+  it 'checks page title' do
     expect(page).to have_css('h3', text: 'Checkboxes')
   end
 

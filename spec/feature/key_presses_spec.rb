@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Key Presses page', type: :feature do
+RSpec.feature 'Key Presses page' do
   # Capybara Doc - https://www.rubydoc.info/github/jnicklas/capybara/Capybara%2FNode%2FElement%3Asend_keys
 
   before { visit '/key_presses' }
 
-  it 'title should be visible' do
+  it 'checks page title' do
     expect(page).to have_css('h3', text: 'Key Presses')
   end
 

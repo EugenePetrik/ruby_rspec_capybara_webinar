@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.feature 'Login page', type: :feature do
+RSpec.feature 'Login page' do
   before { visit '/login' }
 
-  it 'title should be visible' do
+  it 'checks page title' do
     expect(page).to have_css('h2', text: 'Login Page')
   end
 

@@ -73,7 +73,7 @@ Capybara.app_host = 'https://the-internet.herokuapp.com'
 Capybara.default_max_wait_time = 5
 
 RSpec.configure do |config|
-  config.append_before(:each, type: :feature) do
+  config.append_before(:each) do
     Capybara.reset_session!
     Capybara.execute_script 'try { localStorage.clear() } catch(err) { }'
     Capybara.execute_script 'try { sessionStorage.clear() } catch(err) { }'

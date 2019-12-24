@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Forgot Password page', type: :feature do
+RSpec.feature 'Forgot Password page' do
   before { visit '/forgot_password' }
 
-  it 'title should be visible' do
+  it 'checks page title' do
     expect(page).to have_css('h2', text: 'Forgot Password')
   end
 
