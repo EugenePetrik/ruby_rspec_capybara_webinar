@@ -1,4 +1,5 @@
-## Ruby + RSpec + Capybara
+## This project has been prepared for the webinar.
+## We use the following tools, such as **Ruby**, **Capybara**, and **RSpec**.
 
 #### Install Chromedriver on Ubuntu
 
@@ -115,17 +116,31 @@ rspec --init
 #### Run all spec files
 
 ```shell
-rspec spec/feature/
+rspec
 ```
 
-#### Run specific spec file
+#### Run all spec files in a single directory
+
+```shell
+rspec spec/feature
+```
+
+#### Run a single spec file
 
 ```shell
 rspec spec/feature/welcome_page_spec.rb
 ```
 
-#### Run specific test
+#### Run a single example from a spec file (by line number)
 
 ```shell
 rspec spec/feature/key_presses_spec.rb:18
 ```
+
+#### Useful links
+
+[Capybara Cheatsheet](https://gist.github.com/tomas-stefano/6652111)
+
+[Ruby Capybara With Selenium Cheat Sheat](https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html)
+
+[Rubocop Tests Naming](https://github.com/rubocop-hq/rspec-style-guide#naming)
