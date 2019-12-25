@@ -8,9 +8,20 @@ Capybara.register_driver(:selenium_chrome) do |app|
   options = Selenium::WebDriver::Chrome::Options.new
   options.add_argument('window-size=1600,1268')
 
+  # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL"
+  # https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
+
+  CAPABILITIES = Selenium::WebDriver::Remote::Capabilities.chrome(
+    loggingPrefs: {
+      browser: 'INFO', # Capture JavaScript errors in Browser
+      driver: 'INFO' # Capture WebDriver severe errors
+    }
+  )
+
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
+    desired_capabilities: CAPABILITIES,
     options: options
   )
 end
@@ -34,9 +45,17 @@ Capybara.register_driver(:selenium_chrome_headless) do |app|
   options.add_argument('headless')
   options.add_argument('disable-gpu')
 
+  CAPABILITIES = Selenium::WebDriver::Remote::Capabilities.chrome(
+    loggingPrefs: {
+      browser: 'INFO', # Capture JavaScript errors in Browser
+      driver: 'INFO' # Capture WebDriver severe errors
+    }
+  )
+
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
+    desired_capabilities: CAPABILITIES,
     options: options
   )
 end
@@ -75,9 +94,19 @@ Capybara.save_path = 'tmp/capybara'
 Capybara.exact = true
 
 RSpec.configure do |config|
-  config.append_before do
+  config.before do
     Capybara.reset_session!
     Capybara.execute_script 'try { localStorage.clear() } catch(err) { }'
     Capybara.execute_script 'try { sessionStorage.clear() } catch(err) { }'
+  end
+
+  config.after(:suite) do
+    browser_errors = Capybara.page.driver.browser.manage.logs.get(:browser)
+    driver_errors = Capybara.page.driver.browser.manage.logs.get(:driver)
+
+    Dir.mkdir('tmp/logs') unless Dir.exist?('tmp/logs')
+
+    open('tmp/logs/chrome.log', 'w') { |f| f <<  browser_errors }
+    open('tmp/logs/chromedriver.log', 'w') { |f| f << driver_errors }
   end
 end

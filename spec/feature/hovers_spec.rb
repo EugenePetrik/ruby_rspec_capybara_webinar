@@ -9,8 +9,8 @@ RSpec.describe 'Hovers page', type: :feature do
 
   it 'hovers to second profile' do
     within(:xpath, '(//div[@class="figure"])[2]') do
-      find('img').hover
-      find('a').click
+      find(:xpath, './/img[@alt="User Avatar"]').hover
+      find(:xpath, './/a[contains(text(), "View profile")]').click
     end
 
     expect(page.current_url).to include('/users/2')
