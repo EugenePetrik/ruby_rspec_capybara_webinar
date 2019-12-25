@@ -137,6 +137,12 @@ rspec spec/feature/welcome_page_spec.rb
 rspec spec/feature/key_presses_spec.rb:18
 ```
 
+#### Run all spec files with the 'smoke' tag
+
+```shell
+rspec spec/feature/tags_spec.rb --tag smoke
+```
+
 #### Useful links
 
 [Capybara Cheatsheet](https://gist.github.com/tomas-stefano/6652111)
