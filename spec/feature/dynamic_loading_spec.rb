@@ -12,7 +12,7 @@ RSpec.describe 'Dynamic Loading page', type: :feature do
     expect(page).to have_selector(:link_or_button, 'Start')
   end
 
-  it 'waits Hello World content' do
+  it 'waits "Hello World" content' do
     click_button 'Start'
 
     using_wait_time 10 do

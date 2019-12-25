@@ -71,6 +71,8 @@ end
 
 Capybara.app_host = 'https://the-internet.herokuapp.com'
 Capybara.default_max_wait_time = 3
+Capybara.save_path = 'tmp/capybara'
+Capybara.exact = true
 
 RSpec.configure do |config|
   config.append_before do
