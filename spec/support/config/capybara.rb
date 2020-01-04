@@ -118,16 +118,16 @@ else
   Capybara.javascript_driver = :selenium_chrome_headless
 end
 
-# Calling remote servers
+# The default host to use when giving a relative URL to visit
 # https://github.com/teamcapybara/capybara#calling-remote-servers
 Capybara.app_host = 'https://the-internet.herokuapp.com'
-# Change wait time (default is 2 seconds)
+# The maximum number of seconds to wait for asynchronous processes to finish (default is 2 seconds).
 # https://github.com/teamcapybara/capybara#asynchronous-javascript-ajax-and-friends
 Capybara.default_max_wait_time = 3
-# Save screenshots
+# Where to put pages saved through save_page, save_screenshot, save_and_open_page, or save_and_open_screenshot.
 # https://github.com/teamcapybara/capybara#debugging
 Capybara.save_path = 'tmp/capybara'
-# Capybara finds elements
+# Whether locators are matched exactly or with substrings.
 # https://github.com/teamcapybara/capybara#matching
 Capybara.exact = true
 
@@ -141,17 +141,15 @@ RSpec.configure do |config|
 
   # Save browser and driver logs
   config.after(:suite) do
-    # Gather browser logs
-    browser_errors = Capybara.page.driver.browser.manage.logs.get(:browser)
-    # Gather driver logs
-    driver_errors = Capybara.page.driver.browser.manage.logs.get(:driver)
+    # Gather logs
+    browser_logs = Capybara.page.driver.browser.manage.logs.get(:browser)
+    driver_logs = Capybara.page.driver.browser.manage.logs.get(:driver)
 
     # Create tmp/logs folder if it does not exist
     Dir.mkdir('tmp/logs') unless Dir.exist?('tmp/logs')
 
-    # Save browser logs to tmp/logs/chrome.log file
-    open('tmp/logs/chrome.log', 'w') { |f| f <<  browser_errors }
-    # Save driver logs to tmp/logs/chromedriver.log file
-    open('tmp/logs/chromedriver.log', 'w') { |f| f << driver_errors }
+    # Save logs to file
+    open('tmp/logs/chrome.log', 'w') { |f| f <<  browser_logs }
+    open('tmp/logs/chromedriver.log', 'w') { |f| f << driver_logs }
   end
 end
