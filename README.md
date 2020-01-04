@@ -150,3 +150,5 @@ rspec spec/feature/tags_spec.rb --tag smoke
 [Capybara Cheat Sheet #2](https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html)
 
 [Rubocop Tests Naming](https://github.com/rubocop-hq/rspec-style-guide#naming)
+
+[FFaker reference](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)
