@@ -145,8 +145,8 @@ rspec spec/feature/tags_spec.rb --tag smoke
 
 #### Useful links
 
-[Capybara Cheatsheet](https://gist.github.com/tomas-stefano/6652111)
+[Capybara Cheat Sheet #1](https://gist.github.com/tomas-stefano/6652111)
 
-[Ruby Capybara With Selenium Cheat Sheat](https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html)
+[Capybara Cheat Sheet #1](https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html)
 
 [Rubocop Tests Naming](https://github.com/rubocop-hq/rspec-style-guide#naming)

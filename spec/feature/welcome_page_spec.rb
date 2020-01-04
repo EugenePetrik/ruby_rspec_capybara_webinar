@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# If you are not using Rails, tag all the example groups
+# in which you want to use Capybara with "type: :feature"
+# https://github.com/teamcapybara/capybara#using-capybara-with-rspec
+
 RSpec.describe 'The-Internet page', type: :feature do
   before { visit '/' }
 
