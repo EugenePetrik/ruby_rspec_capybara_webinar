@@ -12,6 +12,7 @@ RSpec.describe 'Forgot Password page', type: :feature do
   end
 
   it 'retrieve password button should be visible' do
+    # Scoping - https://github.com/teamcapybara/capybara#scoping
     within('form#forgot_password') do
       expect(page).to have_button('Retrieve password')
     end

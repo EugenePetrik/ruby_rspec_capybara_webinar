@@ -32,8 +32,8 @@ RSpec.describe 'The-Internet page', type: :feature do
   end
 
   it 'checks the numner of links' do
-    links_size = all('ul li a').size
-    expect(links_size).to eq 43
+    links = all('ul li a')
+    expect(links.size).to eq 43
   end
 
   it 'clicks on the Form Authentication link with click_link' do
@@ -49,6 +49,7 @@ RSpec.describe 'The-Internet page', type: :feature do
 
   it 'finds the link and clicks' do
     # To click on a button, use find_button('button_text').click
+    # To click on a button, use find_button(value: '1234').click
     find_link('Dynamic Loading').click
     expect(page).to have_current_path('/dynamic_loading')
   end

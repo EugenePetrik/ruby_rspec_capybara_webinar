@@ -9,11 +9,12 @@ RSpec.describe 'Dynamic Loading page', type: :feature do
   end
 
   it 'shows Start button' do
+    # Capybara matcher for presence of button or link
     expect(page).to have_selector(:link_or_button, 'Start')
   end
 
   it 'waits "Hello World" content' do
-    click_button 'Start'
+    click_button('Start')
 
     using_wait_time 10 do
       within('#finish') do

@@ -11,7 +11,7 @@ RSpec.describe 'Checkboxes page', type: :feature do
     expect(all(:css, 'input[type="checkbox"]').size).to eq 2
   end
 
-  it 'checks that checkbox 1 is selected' do
+  it 'checks that checkbox 1 is not selected' do
     expect(find(:xpath, '//input[@type="checkbox"][1]')).not_to be_checked
   end
 
@@ -20,11 +20,11 @@ RSpec.describe 'Checkboxes page', type: :feature do
   end
 
   # Select checkbox by id, name or label text
-  # check('checkbox_selector')
+  # check('A Checkbox')
 
   # Deselect checkbox by id, name or label text
-  # uncheck('checkbox_selector')
+  # uncheck('A Checkbox')
 
   # Choose radio button by id, name or label text
-  # choose('yes')
+  # choose('A Radio Button')
 end

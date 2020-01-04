@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Debug', type: :feature do
+RSpec.describe 'Debugging', type: :feature do
   # https://github.com/teamcapybara/capybara#debugging
   
   before { visit '/' }

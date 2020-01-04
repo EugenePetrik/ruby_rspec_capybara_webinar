@@ -9,11 +9,12 @@ RSpec.describe 'File Upload page', type: :feature do
 
   it 'uploads file' do
     path = File.absolute_path('./spec/support/files/dummy_image.jpeg')
+    image_text = File.basename(path).to_s
 
     attach_file('file-upload', path)
-    click_on 'Upload'
+    click_on('Upload')
 
     expect(page).to have_css('h3', text: 'File Uploaded!')
-    expect(page).to have_css('#uploaded-files', text: File.basename(path).to_s)
+    expect(page).to have_css('#uploaded-files', text: image_text)
   end
 end
