@@ -15,8 +15,7 @@ RSpec.describe 'The-Internet page', type: :feature do
     expect(page).to have_css('h1', text: 'Welcome to the-internet')
   end
 
-  it 'checks current URL' do
-    skip 'Not implemented yet'
+  it 'checks current URL', skip: 'Not implemented yet' do
     expect(page).to have_current_path('https://the-internet.herokuapp.com')
   end
 end
