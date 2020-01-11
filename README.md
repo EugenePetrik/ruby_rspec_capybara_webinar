@@ -122,25 +122,25 @@ rspec
 #### Run all spec files in a single directory
 
 ```shell
-rspec spec/feature
+rspec spec/features
 ```
 
 #### Run a single spec file
 
 ```shell
-rspec spec/feature/welcome_page_spec.rb
+rspec spec/features/welcome_page_spec.rb
 ```
 
 #### Run a single example from a spec file (by line number)
 
 ```shell
-rspec spec/feature/key_presses_spec.rb:18
+rspec spec/features/key_presses_spec.rb:18
 ```
 
 #### Run all spec files with the 'smoke' tag
 
 ```shell
-rspec spec/feature/tags_spec.rb --tag smoke
+rspec spec/features --tag smoke
 ```
 
 #### Useful links
