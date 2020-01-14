@@ -12,6 +12,7 @@ RSpec.describe 'The-Internet page', type: :feature do
   end
 
   it 'checks page heading with have_css' do
+    skip 'Not implemented yet'
     expect(page).to have_css('h1', text: 'Welcome to the-internet')
   end
 

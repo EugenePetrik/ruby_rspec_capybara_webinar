@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'capybara/rspec'
-require 'selenium-webdriver'
+require 'webdrivers/chromedriver'
+require 'webdrivers/geckodriver'
 
 # Capybara drivers - https://github.com/teamcapybara/capybara#drivers
 
@@ -15,13 +16,12 @@ Capybara.register_driver(:selenium_chrome) do |app|
 
   # https://selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Remote/Capabilities.html
   CAPABILITIES = Selenium::WebDriver::Remote::Capabilities.chrome(
-    # Preferences for logging - https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
-    # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL"
+    # Preferences for logging - https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities.
+    # Logging Prefs: "browser", "driver", "client", "server".
+    # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
     loggingPrefs: {
       # Capture JavaScript errors in Browser
-      browser: 'INFO',
-      # Capture WebDriver severe errors
-      driver: 'INFO'
+      browser: 'ALL'
     }
   )
 
@@ -41,19 +41,18 @@ Capybara.register_driver(:selenium_chrome_headless) do |app|
   # https://selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Chrome/Options.html
   options = Selenium::WebDriver::Chrome::Options.new
   # Sets the initial window size.
-  options.add_argument('window-size=1600,1268')
+  options.add_argument('window-size=1980,1024')
   # Runs Chrome in headless mode.
   options.add_argument('headless')
 
   # https://selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Remote/Capabilities.html
   CAPABILITIES = Selenium::WebDriver::Remote::Capabilities.chrome(
-    # Preferences for logging - https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
-    # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL"
+    # Preferences for logging - https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities.
+    # Logging Prefs: "browser", "driver", "client", "server".
+    # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
     loggingPrefs: {
       # Capture JavaScript errors in Browser
-      browser: 'INFO',
-      # Capture WebDriver severe errors
-      driver: 'INFO'
+      browser: 'ALL'
     }
   )
 
@@ -90,7 +89,7 @@ Capybara.register_driver(:selenium_headless) do |app|
   # https://selenium.dev/selenium/docs/api/rb/Selenium/WebDriver/Firefox/Options.html
   options = Selenium::WebDriver::Firefox::Options.new
   # Sets the initial window size.
-  options.add_argument('--window-size=1600,1268')
+  options.add_argument('--window-size=1980,1024')
   # Runs Chrome in headless mode.
   options.add_argument('--headless')
 
@@ -135,21 +134,17 @@ RSpec.configure do |config|
   # Clear browser data before each test
   config.before do
     Capybara.reset_session!
-    Capybara.execute_script 'try { localStorage.clear() } catch(err) { }'
-    Capybara.execute_script 'try { sessionStorage.clear() } catch(err) { }'
   end
 
   # Save browser and driver logs
   config.after(:suite) do
     # Gather logs
     browser_logs = Capybara.page.driver.browser.manage.logs.get(:browser)
-    driver_logs = Capybara.page.driver.browser.manage.logs.get(:driver)
 
     # Create tmp/logs folder if it does not exist
     Dir.mkdir('tmp/logs') unless Dir.exist?('tmp/logs')
 
     # Save logs to file
     open('tmp/logs/chrome.log', 'w') { |f| f <<  browser_logs }
-    open('tmp/logs/chromedriver.log', 'w') { |f| f << driver_logs }
   end
 end
