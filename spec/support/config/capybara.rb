@@ -52,7 +52,7 @@ Capybara.register_driver(:selenium_chrome_headless) do |app|
     # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
     loggingPrefs: {
       # Capture JavaScript errors in Browser
-      browser: 'ALL'
+      browser: 'INFO'
     }
   )
 
@@ -142,9 +142,10 @@ RSpec.configure do |config|
     browser_logs = Capybara.page.driver.browser.manage.logs.get(:browser)
 
     # Create tmp/logs folder if it does not exist
-    Dir.mkdir('tmp/logs') unless Dir.exist?('tmp/logs')
+    Dir.mkdir('tmp') unless Dir.exist?('tmp')
 
     # Save logs to file
-    open('tmp/logs/chrome.log', 'w') { |f| f <<  browser_logs }
+    logs = browser_logs.map(&:to_s).join("\n\n")
+    open('tmp/chrome.log', 'w') { |f| f <<  logs }
   end
 end
