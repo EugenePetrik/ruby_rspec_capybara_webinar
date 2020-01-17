@@ -21,7 +21,7 @@ Capybara.register_driver(:selenium_chrome) do |app|
     # Loggers Values: "OFF", "SEVERE", "WARNING", "INFO", "CONFIG", "FINE", "FINER", "FINEST", "ALL".
     loggingPrefs: {
       # Capture JavaScript errors in Browser
-      browser: 'ALL'
+      browser: 'INFO'
     }
   )
 
