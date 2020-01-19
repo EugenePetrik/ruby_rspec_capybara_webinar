@@ -8,8 +8,6 @@ ruby '2.6.5'
 gem 'capybara', '~> 3.29'
 # https://github.com/ffaker/ffaker
 gem 'ffaker', '~> 2.13'
-# https://github.com/copiousfreetime/launchy
-gem 'launchy', '~> 2.4', '>= 2.4.3'
 # https://github.com/rspec/rspec
 gem 'rspec', '~> 3.9'
 # https://github.com/rubocop-hq/rubocop-rspec
