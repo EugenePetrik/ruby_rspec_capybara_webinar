@@ -12,8 +12,6 @@ gem 'ffaker', '~> 2.13'
 gem 'launchy', '~> 2.4', '>= 2.4.3'
 # https://github.com/rspec/rspec
 gem 'rspec', '~> 3.9'
-# https://github.com/rubocop-hq/rubocop-performance
-gem 'rubocop-performance', '~> 1.5', '>= 1.5.1'
 # https://github.com/rubocop-hq/rubocop-rspec
 gem 'rubocop-rspec', '~> 1.37'
 # https://github.com/titusfortner/webdrivers
