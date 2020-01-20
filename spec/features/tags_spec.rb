@@ -3,7 +3,7 @@
 RSpec.describe 'The-Internet page', type: :feature do
   before { visit '/' }
 
-  it 'checks page title with have_title', :smoke do
+  it 'checks page title with have_title', :smoke, :regression do
     expect(page).to have_title('The Internet')
   end
 
@@ -19,7 +19,7 @@ RSpec.describe 'The-Internet page', type: :feature do
     expect(page).to have_css('h2', text: 'Available Examples')
   end
 
-  it 'checks current URL' do
+  it 'checks current URL', :regression do
     expect(page).to have_current_path('https://the-internet.herokuapp.com')
   end
 
@@ -27,12 +27,12 @@ RSpec.describe 'The-Internet page', type: :feature do
     expect(page).to have_link('Form Authentication')
   end
 
-  it 'checks the numner of links' do
+  it 'checks the numner of links', :regression do
     links_size = all('ul li a').size
     expect(links_size).to eq 43
   end
 
-  it 'clicks on the Dropdown link with click_on', :smoke do
+  it 'clicks on the Dropdown link with click_on', :smoke, :regression do
     click_on('Dropdown')
     expect(page).to have_current_path('/dropdown')
   end

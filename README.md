@@ -137,10 +137,22 @@ rspec spec/features/welcome_page_spec.rb
 rspec spec/features/key_presses_spec.rb:18
 ```
 
-#### Run all spec files with the 'smoke' tag
+#### Run all specs with the 'smoke' tag
 
 ```shell
-rspec spec/features --tag smoke
+rspec spec/features/ --tag smoke
+```
+
+#### Run specs with the 'smoke' and 'regression' tags
+
+```shell
+rspec spec/features/tags_spec.rb --tag smoke --tag regression
+```
+
+#### Run specs with the 'regression' tag and exclude spec with the 'smoke' tag
+
+```shell
+rspec spec/features/tags_spec.rb --tag ~@smoke --tag regression
 ```
 
 #### Useful links
@@ -152,3 +164,5 @@ rspec spec/features --tag smoke
 [Rubocop Tests Naming](https://github.com/rubocop-hq/rspec-style-guide#naming)
 
 [FFaker reference](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)
+
+[Filter specs with a tag option](https://relishapp.com/rspec/rspec-core/v/3-9/docs/command-line/tag-option#filter-examples-with-a-simple-tag)
