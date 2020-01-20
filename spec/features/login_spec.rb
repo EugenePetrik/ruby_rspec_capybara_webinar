@@ -25,8 +25,8 @@ RSpec.describe 'Login page', type: :feature do
     click_button('Login')
 
     success_message = 'You logged into a secure area!'
-    expect(page).to have_current_path('/secure')
     expect(page).to have_content(success_message)
+    expect(page).to have_current_path('/secure')
     expect(page).to have_css('h2', text: 'Secure Area')
     expect(page).to have_css('a i', text: 'Logout')
   end

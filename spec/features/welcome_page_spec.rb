@@ -4,6 +4,7 @@
 # in which you want to use Capybara with "type: :feature"
 # https://github.com/teamcapybara/capybara#using-capybara-with-rspec
 
+# RSpec.feature 'The-Internet page'
 RSpec.describe 'The-Internet page', type: :feature do
   before { visit '/' }
 
@@ -33,7 +34,7 @@ RSpec.describe 'The-Internet page', type: :feature do
 
   it 'checks the numner of links' do
     links = all('ul li a')
-    expect(links.size).to eq 43
+    expect(links.size).to eq(43)
   end
 
   it 'clicks on the Form Authentication link with click_link' do
@@ -56,11 +57,11 @@ RSpec.describe 'The-Internet page', type: :feature do
 
   it 'finds the link and gets text' do
     get_link_text = find_link('Forgot Password').text
-    expect(get_link_text).to eq 'Forgot Password'
+    expect(get_link_text).to eq('Forgot Password')
   end
 
   it 'finds the link and gets the href attribute' do
     get_href_attr = find_link('JavaScript onload event error')[:href]
-    expect(get_href_attr).to eq 'https://the-internet.herokuapp.com/javascript_error'
+    expect(get_href_attr).to eq('https://the-internet.herokuapp.com/javascript_error')
   end
 end

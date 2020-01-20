@@ -146,6 +146,6 @@ RSpec.configure do |config|
 
     # Save logs to file
     logs = browser_logs.map(&:to_s).join("\n\n")
-    open('tmp/chrome.log', 'w') { |f| f <<  logs }
+    open('tmp/chrome.log', 'w') { |f| f << logs }
   end
 end

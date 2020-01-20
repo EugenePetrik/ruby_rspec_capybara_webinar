@@ -8,6 +8,7 @@ RSpec.describe 'Infinite Scroll page', type: :feature do
   end
 
   it 'scrolls to bottom five times' do
+    # Script for executing JavaScript on the page
     script = 'window.scrollTo(0, document.body.scrollHeight)'
 
     5.times { execute_script(script) }

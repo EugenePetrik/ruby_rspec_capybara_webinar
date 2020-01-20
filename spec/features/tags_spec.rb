@@ -29,7 +29,7 @@ RSpec.describe 'The-Internet page', type: :feature do
 
   it 'checks the numner of links', :regression do
     links_size = all('ul li a').size
-    expect(links_size).to eq 43
+    expect(links_size).to eq(43)
   end
 
   it 'clicks on the Dropdown link with click_on', :smoke, :regression do
@@ -44,11 +44,11 @@ RSpec.describe 'The-Internet page', type: :feature do
 
   it 'finds the link and gets text' do
     get_link_text = find_link('Forgot Password').text
-    expect(get_link_text).to eq 'Forgot Password'
+    expect(get_link_text).to eq('Forgot Password')
   end
 
   it 'finds the link and gets the href attribute' do
     get_href_attr = find_link('JavaScript onload event error')[:href]
-    expect(get_href_attr).to eq 'https://the-internet.herokuapp.com/javascript_error'
+    expect(get_href_attr).to eq('https://the-internet.herokuapp.com/javascript_error')
   end
 end

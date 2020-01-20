@@ -8,7 +8,9 @@ RSpec.describe 'File Upload page', type: :feature do
   end
 
   it 'uploads file' do
+    # The path to the file
     path = File.absolute_path('./spec/support/files/dummy_image.jpeg')
+    # Get file name
     image_text = File.basename(path).to_s
 
     attach_file('file-upload', path)

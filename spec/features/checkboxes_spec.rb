@@ -8,7 +8,7 @@ RSpec.describe 'Checkboxes page', type: :feature do
   end
 
   it 'shows 2 checkboxes' do
-    expect(all(:css, 'input[type="checkbox"]').size).to eq 2
+    expect(all(:css, 'input[type="checkbox"]').size).to eq(2)
   end
 
   it 'checks that checkbox 1 is not selected' do

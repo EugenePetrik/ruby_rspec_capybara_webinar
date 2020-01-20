@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Before and after hooks' do
   before(:all) do
     puts 'Runs before all examples'

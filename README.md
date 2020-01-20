@@ -161,8 +161,12 @@ rspec spec/features/tags_spec.rb --tag ~@smoke --tag regression
 
 [Capybara Cheat Sheet #2](https://blog.morizyun.com/blog/capybara-selenium-webdriver-ruby/index.html)
 
+[RSpec Docs](https://relishapp.com/rspec/rspec-core/v/3-9/docs/)
+
+[RSpec Expectations](https://relishapp.com/rspec/rspec-expectations/v/3-9/docs)
+
+[Filter specs with a tag option](https://relishapp.com/rspec/rspec-core/v/3-9/docs/command-line/tag-option#filter-examples-with-a-simple-tag)
+
 [Rubocop Tests Naming](https://github.com/rubocop-hq/rspec-style-guide#naming)
 
 [FFaker reference](https://github.com/ffaker/ffaker/blob/master/REFERENCE.md)
-
-[Filter specs with a tag option](https://relishapp.com/rspec/rspec-core/v/3-9/docs/command-line/tag-option#filter-examples-with-a-simple-tag)

@@ -13,6 +13,6 @@ RSpec.describe 'Hovers page', type: :feature do
       find(:xpath, './/a[contains(text(), "View profile")]').click
     end
 
-    expect(page.current_url).to include('/users/2')
+    expect(current_url).to include('/users/2')
   end
 end
