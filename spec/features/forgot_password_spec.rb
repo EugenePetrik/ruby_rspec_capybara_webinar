@@ -8,6 +8,7 @@ RSpec.describe 'Forgot Password page', type: :feature do
   end
 
   it 'email field should be visible' do
+    # Checks for presence of an input field named E-mail in a form
     expect(page).to have_field('E-mail')
   end
 
@@ -16,11 +17,14 @@ RSpec.describe 'Forgot Password page', type: :feature do
     within('form#forgot_password') do
       expect(page).to have_button('Retrieve password')
     end
+
+    within(:xpath, '//form[@id="forgot_password"]') do
+      expect(page).to have_button('Retrieve password')
+    end
   end
 
   it 'sends restore password email' do
     user_email = FFaker::Internet.email
-    # puts "User email is #{user_email}"
 
     within('form#forgot_password') do
       fill_in('E-mail', with: user_email)
@@ -28,6 +32,6 @@ RSpec.describe 'Forgot Password page', type: :feature do
     end
 
     expect(page).to have_current_path('/email_sent')
-    expect(page).to have_content('Your e-mail\'s been sent!')
+    expect(page).to have_content("Your e-mail's been sent!")
   end
 end

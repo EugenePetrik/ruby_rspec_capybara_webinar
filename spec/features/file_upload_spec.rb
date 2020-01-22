@@ -10,9 +10,10 @@ RSpec.describe 'File Upload page', type: :feature do
   it 'uploads file' do
     # The path to the file
     path = File.absolute_path('./spec/support/files/dummy_image.jpeg')
-    # Get file name
+    # Gets file name
     image_text = File.basename(path).to_s
 
+    # File input
     attach_file('file-upload', path)
     click_on('Upload')
 

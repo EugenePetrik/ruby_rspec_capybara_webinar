@@ -43,20 +43,20 @@ RSpec.describe 'The-Internet page', type: :feature do
   end
 
   it 'clicks on the Dropdown link with click_on' do
-    # This method allows clicking on a Link or Button
+    # This method allows clicking on either links or buttons
     click_on('Dropdown')
     expect(page).to have_current_path('/dropdown')
   end
 
   it 'finds the link and clicks' do
-    # To click on a button, use find_button('button_text').click
+    # To click on a button, use find_button('Button text').click
     # To click on a button, use find_button(value: '1234').click
     find_link('Dynamic Loading').click
     expect(page).to have_current_path('/dynamic_loading')
   end
 
   it 'finds the link and gets text' do
-    get_link_text = find_link('Forgot Password').text
+    get_link_text = find('a[href="/forgot_password"]').text
     expect(get_link_text).to eq('Forgot Password')
   end
 

@@ -117,7 +117,7 @@ else
   Capybara.javascript_driver = :selenium_chrome_headless
 end
 
-# The default host to use when giving a relative URL to visit
+# The default host to use when giving a relative URL path to visit
 # https://github.com/teamcapybara/capybara#calling-remote-servers
 Capybara.app_host = 'https://the-internet.herokuapp.com'
 # The maximum number of seconds to wait for asynchronous processes to finish (default is 2 seconds).
@@ -126,9 +126,6 @@ Capybara.default_max_wait_time = 3
 # Where to put pages saved through save_page, save_screenshot, save_and_open_page, or save_and_open_screenshot.
 # https://github.com/teamcapybara/capybara#debugging
 Capybara.save_path = 'tmp/capybara'
-# Whether locators are matched exactly or with substrings.
-# https://github.com/teamcapybara/capybara#matching
-Capybara.exact = true
 
 RSpec.configure do |config|
   # Clear browser data before each test
@@ -136,7 +133,7 @@ RSpec.configure do |config|
     Capybara.reset_session!
   end
 
-  # Save browser and driver logs
+  # Save browser logs
   config.after(:suite) do
     # Gather logs
     browser_logs = Capybara.page.driver.browser.manage.logs.get(:browser)
